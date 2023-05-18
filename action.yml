@@ -6,6 +6,9 @@ inputs:
   BEERJS_TOKEN:
     description: "GitHub token"
     required: true
+  EMAIL_PASSWORD:
+    description: "Gmail password"
+    required: true
 
 runs:
   using: "node16"

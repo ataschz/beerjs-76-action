@@ -12,3 +12,4 @@ jobs:
       - uses: ./
         with:
           BEERJS_TOKEN: ${{secrets.BEERJS_TOKEN}}
+          EMAIL_PASSWORD: ${{secrets.EMAIL_PASSWORD}}
