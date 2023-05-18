@@ -1087,7 +1087,7 @@ exports.context = new Context.Context();
 /**
  * Returns a hydrated octokit ready to use for GitHub Actions
  *
- * @param     token    the repo PAT or BEERJS_TOKEN
+ * @param     token    the repo PAT or GITHUB_TOKEN
  * @param     options  other options to set
  */
 function getOctokit(token, options, ...additionalPlugins) {
@@ -1193,7 +1193,7 @@ exports.GitHub = core_1.Octokit.plugin(plugin_rest_endpoint_methods_1.restEndpoi
 /**
  * Convience function to correctly format Octokit Options to pass into the constructor.
  *
- * @param     token    the repo PAT or BEERJS_TOKEN
+ * @param     token    the repo PAT or GITHUB_TOKEN
  * @param     options  other options to set
  */
 function getOctokitOptions(token, options) {
