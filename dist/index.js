@@ -1087,7 +1087,7 @@ exports.context = new Context.Context();
 /**
  * Returns a hydrated octokit ready to use for GitHub Actions
  *
- * @param     token    the repo PAT or GITHUB_TOKEN
+ * @param     token    the repo PAT or BEERJS_TOKEN
  * @param     options  other options to set
  */
 function getOctokit(token, options, ...additionalPlugins) {
@@ -1193,7 +1193,7 @@ exports.GitHub = core_1.Octokit.plugin(plugin_rest_endpoint_methods_1.restEndpoi
 /**
  * Convience function to correctly format Octokit Options to pass into the constructor.
  *
- * @param     token    the repo PAT or GITHUB_TOKEN
+ * @param     token    the repo PAT or BEERJS_TOKEN
  * @param     options  other options to set
  */
 function getOctokitOptions(token, options) {
@@ -9848,8 +9848,8 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const GITHUB_TOKEN = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("GITHUB_TOKEN");
-        const octokit = (0,_actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit)(GITHUB_TOKEN);
+        const BEERJS_TOKEN = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("BEERJS_TOKEN");
+        const octokit = (0,_actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit)(BEERJS_TOKEN);
         const { pull_request } = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload;
         if (pull_request) {
             yield octokit.rest.issues.createComment(Object.assign(Object.assign({}, _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo), { issue_number: pull_request === null || pull_request === void 0 ? void 0 : pull_request.number, body: "Hola, desde  la BeerJS 76!! ✨" }));

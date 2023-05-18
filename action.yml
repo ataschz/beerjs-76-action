@@ -3,7 +3,7 @@ description: "Action para la BeerJS 76"
 author: "Ata Sanchez (@ataschz)"
 
 inputs:
-  GITHUB_TOKEN:
+  BEERJS_TOKEN:
     description: "GitHub token"
     required: true
 

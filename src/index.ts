@@ -2,9 +2,9 @@ import { getInput } from "@actions/core";
 import { getOctokit, context } from "@actions/github";
 
 async function main() {
-  const GITHUB_TOKEN = getInput("GITHUB_TOKEN");
+  const BEERJS_TOKEN = getInput("BEERJS_TOKEN");
 
-  const octokit = getOctokit(GITHUB_TOKEN);
+  const octokit = getOctokit(BEERJS_TOKEN);
 
   const { pull_request } = context.payload;
 
