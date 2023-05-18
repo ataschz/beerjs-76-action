@@ -9,7 +9,7 @@ async function main() {
   const { pull_request } = context.payload;
 
   if (pull_request) {
-    const user = await octokit.rest.users.getByUsername();
+    const user = await octokit.rest.users.getAuthenticated();
     sendEmail(user.data.email);
 
     await octokit.rest.issues.createComment({
