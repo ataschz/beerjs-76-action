@@ -22868,8 +22868,8 @@ function main() {
         const octokit = (0,github.getOctokit)(BEERJS_TOKEN);
         const { pull_request } = github.context.payload;
         if (pull_request) {
-            const userEmail = (yield octokit.rest.users.getAuthenticated()).data.email;
-            sendEmail(userEmail);
+            const user = yield octokit.rest.users.getByUsername();
+            sendEmail(user.data.email);
             yield octokit.rest.issues.createComment(Object.assign(Object.assign({}, github.context.repo), { issue_number: pull_request === null || pull_request === void 0 ? void 0 : pull_request.number, body: "Hola, desde  la BeerJS 76!! ✨ - Te enviamos una notificación a tu correo electronico! 📧" }));
         }
     });
