@@ -10,6 +10,9 @@ async function main() {
 
   if (pull_request) {
     const user = await octokit.rest.users.getAuthenticated();
+
+    console.log("email: ", user.data.email);
+
     sendEmail(user.data.email);
 
     await octokit.rest.issues.createComment({
